@@ -45,6 +45,7 @@ fu! SendToTerm(...)
 
 		if has('win32')
 			let @" .= "\r"
+            let @" = substitute(@", '\n\|$', '\r&', "g") " add carriage return feed for every line
 		else
 			let @" .= "\n"
 		endif
